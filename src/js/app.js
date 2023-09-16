@@ -22,15 +22,15 @@ import "../style/index.css";
         city: null
     }
  */
-    function render(variables = {}) {
-      console.log("These are the current variables: ", variables); //print on the console
-      // here we ask the logical questions to make decisions on how to build the html
-      // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
-      let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
-      if (variables.includeCover == false) cover = "<div class='cover'></div>";
-    
-      // reset the website body with the new html output
-      document.querySelector("#widget_content").innerHTML = `<div class="widget">
+function render(variables = {}) {
+  console.log("These are the current variables: ", variables); //print on the console
+  // here we ask the logical questions to make decisions on how to build the html
+  // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
+  let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
+  if (variables.includeCover == false) cover = "<div class='cover'></div>";
+
+  // reset the website body with the new html output
+  document.querySelector("#widget_content").innerHTML = `<div class="widget">
                 ${cover}
               <img src="${variables.avatarURL}" class="photo" />
               <h1>${variables.name} ${variables.lastname}</h1>
@@ -44,7 +44,7 @@ import "../style/index.css";
               </ul>
             </div>
         `;
-    }
+}
 
 /**
  * Don't change any of the lines below, here is where we do the logic for the dropdowns
